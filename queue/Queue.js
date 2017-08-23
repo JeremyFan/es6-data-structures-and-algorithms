@@ -1,5 +1,9 @@
+/**
+ * @fileOverview 队列
+ */
+
 class Queue {
-  constructor() {
+  constructor(items) {
     this.items = Array.isArray(items) ? items : []
   }
 

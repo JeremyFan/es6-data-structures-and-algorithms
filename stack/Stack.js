@@ -1,3 +1,7 @@
+/**
+ * @fileOverview 栈
+ */
+
 class Stack {
   constructor(items) {
     this.items = Array.isArray(items) ? items : []
