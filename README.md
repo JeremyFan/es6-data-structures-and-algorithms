@@ -1,3 +1,9 @@
 # ES6 Data Structures and Algorithms
 
-Learning javascript data structures and algorithms with ECMAScript 6.
+Learning data structures and algorithms with ECMAScript 6.
+
+Based on this book: *Learn JavaScript Data Structure and Algorithms*.
+
+
+
+
