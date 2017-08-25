@@ -31,3 +31,5 @@ class Queue {
     return this.items.length
   }
 }
+
+export default Queue

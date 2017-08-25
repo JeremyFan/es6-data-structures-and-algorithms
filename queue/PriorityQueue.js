@@ -2,6 +2,7 @@
  * @fileOverview 优先队列
  */
 
+import Queue from './Queue'
 
 /**
  * 优先队列元素类

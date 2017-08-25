@@ -2,8 +2,9 @@
  * @fileOverview 击鼓传花
  * @description 
  *   一个循环队列的实现
- *   依赖 Queue.js
  */
+
+import Queue from './Queue'
 
 /**
  * [hotPotato description]
@@ -15,7 +16,7 @@ function hotPotato(nameList, num) {
   let queue = new Queue(nameList)
 
   while (queue.size() > 1) {
-    for (i = 0; i < num; i++) {
+    for (let i = 0; i < num; i++) {
       // 传到下一玩家的过程是当前玩家从队首到队尾的过程，即先出队再入队
       queue.enqueue(queue.dequeue())
     }

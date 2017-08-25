@@ -3,6 +3,8 @@
  * @description 依赖 Stack.js
  */
 
+import Stack from './Stack'
+
 /**
  * 转换方法
  * @param  {Number} decNumber 需要转换的数值
@@ -12,8 +14,8 @@
 function baseConverter(decNumber, base) {
   let remStack = new Stack,
     rem,
-    baseString=''
-    
+    baseString = ''
+
   const digits = '0123456789ABCDEF'
 
   while (decNumber) {
@@ -28,3 +30,9 @@ function baseConverter(decNumber, base) {
 
   return baseString
 }
+
+// use
+const binary = baseConverter(100, 2)
+const oct = baseConverter(100, 8)
+const hex = baseConverter(100, 16)
+console.log(binary, oct, hex) // 1100100 144 64
