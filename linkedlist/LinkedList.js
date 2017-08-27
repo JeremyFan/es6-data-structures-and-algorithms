@@ -119,14 +119,11 @@ class LinkedList {
 
   /**
    * 删除元素
-   * @param  {[type]} element [description]
+   * @param  {[type]} element 元素
    * @return {[type]}         [description]
    */
   remove(element) {
-    let current = this._head,
-      previous
-
-    const index=this.indexOf(element)
+    const index = this.indexOf(element)
 
     return this.removeAt(index)
   }
