@@ -20,7 +20,8 @@ class LinkedList {
   constructor() {
     // 链表长度
     this._length = 0
-      // 链表的第一个元素
+
+    // 链表的第一个元素
     this._head = null
   }
 

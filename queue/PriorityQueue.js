@@ -34,32 +34,30 @@ class PriorityQueue extends Queue {
    * @param  {Number} priority 优先级，越小越优先
    */
   enqueue(element, priority) {
-    console.log('priority queue enqueue.')
-
     const queueElement = new QueueElement(element, priority)
 
     if (this.isEmpty()) {
-      this.items.push(queueElement)
+      this._items.push(queueElement)
     } else {
       let added = false
 
-      for (var i = 0; i < this.items.length; i++) {
-        if (queueElement.priority < this.items[i].priority) {
+      for (var i = 0; i < this._items.length; i++) {
+        if (queueElement.priority < this._items[i].priority) {
           // 元素优先级高于当前位置元素，插到当前元素之前
-          this.items.splice(i, 0, queueElement)
+          this._items.splice(i, 0, queueElement)
           added = true
           break
         }
       }
 
       if (!added) {
-        this.items.push(queueElement)
+        this._items.push(queueElement)
       }
     }
   }
 
   print() {
-    const items = this.items.map(item => item.element)
+    const items = this._items.map(item => item.element)
 
     console.log(items)
   }

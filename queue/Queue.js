@@ -4,31 +4,31 @@
 
 class Queue {
   constructor(items) {
-    this.items = Array.isArray(items) ? items : []
+    this._items = Array.isArray(items) ? items : []
   }
 
   enqueue(element) {
-    this.items.push(element)
+    this._items.push(element)
   }
 
   dequeue() {
-    return this.items.shift()
+    return this._items.shift()
   }
 
   front() {
-    return this.items[0]
+    return this._items[0]
   }
 
   isEmpty() {
-    return this.items.length === 0
+    return this._items.length === 0
   }
 
   clear() {
-    this.items = []
+    this._items = []
   }
 
   size(){
-    return this.items.length
+    return this._items.length
   }
 }
 
