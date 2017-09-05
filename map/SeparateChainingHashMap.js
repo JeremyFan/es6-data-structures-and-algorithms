@@ -1,5 +1,5 @@
 /**
- * @fileOverview 分离链接法解决冲突的哈希表
+ * @fileOverview 分离链接法解决冲突
  * @description 
  *   使用一个链表保存相同哈希值的元素
  *   依赖链表LinkedList.js
@@ -61,9 +61,7 @@ class SeparateChainingHashMap {
     const position = this._loseloseHashCode(key)
     let linkedList = this._table[position]
 
-    if (!linkedList) {
-      return undefined
-    }
+    if (!linkedList) return
 
     let current = linkedList.getHead()
 
@@ -73,8 +71,6 @@ class SeparateChainingHashMap {
       }
       current = current.next
     }
-
-    return undefined
   }
 
   /**
@@ -131,7 +127,7 @@ console.log(hashMap._table)
  * ·
  * ·
  * ·
- * 28 jeremy -> null
+ * 28 Jeremy -> null
  * 29 John -> Jim -> null
  * 
  */
