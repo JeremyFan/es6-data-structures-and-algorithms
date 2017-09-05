@@ -58,11 +58,11 @@ class HashMap {
 
 // use
 let hashMap = new HashMap
-hashMap.put('Jack', 'jack@google.com')
+hashMap.put('Jack', 'jack@gmail.com')
 hashMap.put('John', 'john@hotmail.com')
 hashMap.put('Jeremy', 'jeremy@126.com')
 
-console.log(hashMap.get('Jack'))  // jack@google.com
+console.log(hashMap.get('Jack'))  // jack@gmail.com
 
 hashMap.remove('Jack')
 console.log(hashMap.get('Jack'))  // undefined

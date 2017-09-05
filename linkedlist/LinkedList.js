@@ -201,3 +201,6 @@ list.removeAt(2)
 list.remove('John')
 
 console.log(list.toString()) // Jeremy
+
+
+export default LinkedList
