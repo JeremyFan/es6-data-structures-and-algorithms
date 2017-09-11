@@ -13,7 +13,7 @@ Install dependencies:
 npm install
 ```
 
-Run a scritp:
+Run a script:
 ```
 npm run babel queue/hot-potato
 ```
