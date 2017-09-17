@@ -131,16 +131,25 @@ class BinarySearchTree {
    * @return {[type]} [description]
    */
   min() {
-    let node = this._root
+    const node = this._findMinNode(this._root)
 
-    if (node) {
-      while (node && node.left !== null) {
-        node = node.left
-      }
-      return node.key
+    return node ? node.key : null
+  }
+
+
+  /**
+   * 查找最小的节点
+   * @param  {Node} node 开始查找的节点
+   * @return {Node}      最小节点
+   */
+  _findMinNode(node) {
+    if (node === null) return null
+
+    while (node.left) {
+      node = node.left
     }
 
-    return null
+    return node
   }
 
   /**
@@ -182,8 +191,50 @@ class BinarySearchTree {
     }
   }
 
+  /**
+   * 删除节点
+   * @param  {[type]} key [description]
+   * @return {[type]}     [description]
+   */
   remove(key) {
+    this._root = this._removeNode(this._root, key)
+  }
 
+  _removeNode(node, key) {
+    if (node === null) return null
+
+    if (key < node.key) {
+      node.left = this._removeNode(node.left, key)
+      return node
+    } else if (key > node.key) {
+      node.right = this._removeNode(node.right, key)
+      return node
+    } else {
+      // 节点是叶子节点
+      if (node.left === null && node.right === null) {
+        node = null
+        return node
+      }
+
+      // 节点只有右侧子节点
+      if (node.left === null) {
+        node = node.right
+        return node
+      }
+      // 节点只有左侧子节点
+      else if (node.right === null) {
+        node = node.left
+        return node
+      }
+
+      // 节点有两个子节点
+      // 查找右侧子树中最小的节点替代被删除节点
+      // 删除右侧子树中最小的节点
+      const aux = this._findMinNode(node.right)
+      node.key = aux.key
+      node.right = this._removeNode(node.right, aux.key)
+      return node
+    }
   }
 
   /**
@@ -221,8 +272,15 @@ tree.preOrderTraverse(tree.printNode) // 7 5 3 6 15 9 8 10 13 12 14 20 18 25
 console.log('post-order traverse:')
 tree.postOrderTraverse(tree.printNode) // 3 6 5 8 12 14 13 10 9 18 25 20 15 7
 
-console.log('---')
+console.log('---search---')
 console.log(tree.min()) // 3
 console.log(tree.max()) // 25
 console.log(tree.has(13)) // true
 console.log(tree.has(999)) // false
+
+console.log('---remove node---')
+tree.remove(14) // 删除叶子节点
+tree.remove(13) // 删除只有左侧子节点的节点
+tree.remove(10) // 删除只有右侧子节点的节点
+tree.remove(9) // 删除有两个子节点的节点
+tree.inOrderTraverse(tree.printNode) // 3 5 6 7 8 12 15 18 20 25
