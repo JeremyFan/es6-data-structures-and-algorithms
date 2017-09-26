@@ -283,4 +283,4 @@ tree.remove(14) // 删除叶子节点
 tree.remove(13) // 删除只有左侧子节点的节点
 tree.remove(10) // 删除只有右侧子节点的节点
 tree.remove(9) // 删除有两个子节点的节点
-tree.inOrderTraverse(tree.printNode) // 3 5 6 7 8 12 15 18 20 25
+tree.inOrderTraverse(tree.printNode) // 3 5 6 7 8 12 15 18 20 25 
