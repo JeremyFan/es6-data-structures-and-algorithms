@@ -65,6 +65,7 @@ class LinkedList {
         index = 0
 
       if (position === 0) {
+        node.next = current
         this._head = node
       } else {
         while (index++ < position) {
@@ -194,13 +195,14 @@ let list = new LinkedList
 list.append('John')
 list.append('Jack')
 list.insert(1, 'Jeremy')
+list.insert(0, 'Alex')
 
-console.log(list.toString()) // John,Jeremy,Jack
+console.log(list.toString()) // Alex,John,Jeremy,Jack
 
 list.removeAt(2)
 list.remove('John')
 
-console.log(list.toString()) // Jeremy
+console.log(list.toString()) // Alex,Jack
 
 
 export default LinkedList
