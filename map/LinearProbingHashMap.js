@@ -45,7 +45,7 @@ class LinearProbingHashMap {
       position++
     }
 
-    this._table[position] = value
+    this._table[position] = new ValuePair(key, value)
   }
 
   /**
@@ -114,3 +114,5 @@ console.log(hashMap._table)
  * 29 John
  * 30 Jim
  */
+
+console.log(hashMap.get('Jeremy'))  // jeremy@126.com
